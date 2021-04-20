@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -9,7 +9,7 @@
   <style>   
 Body {  
   font-family: Calibri, Helvetica, sans-serif;  
-  background-color: lightblue;  
+  background-color: lightgrey;  
 }  
 button {   
        background-color: grey;   
@@ -23,6 +23,7 @@ button {
          }   
  form {   
         border: 3px solid #f1f1f1;   
+        
     }   
  input[type=text], input[type=password] {   
         width: 100%;   
@@ -46,7 +47,11 @@ button {
  .container {   
         padding: 25px;   
         background-color: lightsteelblue;  
-    }   
+    }
+  .buttonscontainer {
+      display:flex;
+    }
+
 </style>  
 </head>
 <script>
@@ -79,17 +84,22 @@ function login()
 </script>
 <body>    
     <center> <h2> Login Form </h2> </center>   
-    <form>  
-        <div class="container">   
-            <label>ID : </label>   
-            <input type="text" placeholder="Enter Username" name="username" id="username" required> <br> 
-            <label>Password : </label>   
-            <input type="password" placeholder="Enter Password" name="password" id="password" required> <br> 
-            <button type="submit" onClick="login()">Login</button> <br>  
-            <input type="checkbox" checked="checked"> Keep me signed in   
-            <button type="button" class="cancelbtn"> Cancel</button>   
-            Forgot <a href="#"> password? </a>   
-        </div>   
-    </form>     
+    <div id="containerdiv">
+        <form>
+            <div class="container">
+                <label>ID : </label>
+                <input type="text" placeholder="Enter Username" name="username" id="username" required> <br>
+                <label>Password : </label>
+                <input type="password" placeholder="Enter Password" name="password" id="password" required> <br>
+                                                                                                            <div class="buttonscontainer">
+                                                                                                                <button type="submit" onClick="login()">Login</button> <br>
+                                                                                                                &nbsp;&nbsp;<button type="button"> Cancel</button>
+                                                                                                            </div>
+                <input type="checkbox" checked="checked"> Keep me signed in
+                <br />
+                Forgot <a href="#"> password? </a>
+            </div>
+        </form>
+    </div>
 </body> 
 </html>
