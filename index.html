@@ -1,0 +1,95 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <title>Login Page</title>
+  <style>   
+Body {  
+  font-family: Calibri, Helvetica, sans-serif;  
+  background-color: lightblue;  
+}  
+button {   
+       background-color: grey;   
+        width: 200px;  
+        color: black;   
+        padding: 15px;   
+        margin: 10px 0px;   
+        border: 2px solid black;   
+        cursor: pointer;   
+	
+         }   
+ form {   
+        border: 3px solid #f1f1f1;   
+    }   
+ input[type=text], input[type=password] {   
+        width: 100%;   
+        margin: 8px 0;  
+        padding: 12px 20px;   
+        display: inline-block;   
+        border: 2px solid black;   
+        box-sizing: border-box;  
+	
+    }  
+ button:hover {   
+        opacity: 0.7;   
+    }   
+  .cancelbtn {   
+        width: auto;   
+        padding: 10px 18px;  
+        margin: 10px 5px;  
+    }   
+        
+     
+ .container {   
+        padding: 25px;   
+        background-color: lightsteelblue;  
+    }   
+</style>  
+</head>
+<script>
+function login()
+	{
+		var uname = document.getElementById("username").value;
+		var pwd = document.getElementById("password").value;
+		var filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+		if(uname =='')
+		{
+			alert("please enter user name.");
+		}
+		else if(pwd=='')
+		{
+        	alert("enter the password");
+		}
+		else if(uname=='2020mt93627' && pwd=='password')
+		{
+			alert("Login done successfully");
+		}
+		else if(pwd.length < 6 || pwd.length > 6)
+		{
+			alert("Password min and max length is 6.");
+		}
+		else
+		{
+	alert('Wrong Credentials!, Please try again');
+			}
+	}
+</script>
+<body>    
+    <center> <h2> Login Form </h2> </center>   
+    <form>  
+        <div class="container">   
+            <label>ID : </label>   
+            <input type="text" placeholder="Enter Username" name="username" id="username" required> <br> 
+            <label>Password : </label>   
+            <input type="password" placeholder="Enter Password" name="password" id="password" required> <br> 
+            <button type="submit" onClick="login()">Login</button> <br>  
+            <input type="checkbox" checked="checked"> Keep me signed in   
+            <button type="button" class="cancelbtn"> Cancel</button>   
+            Forgot <a href="#"> password? </a>   
+        </div>   
+    </form>     
+</body> 
+</html>
